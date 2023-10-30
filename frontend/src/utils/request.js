@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const request = axios.create({
-    baseURL: "https://blog-app-mern-iw0g.onrender.com"
+    baseURL: "https://blog-app-mern-fprg.onrender.com"
 })
 
 export default request
