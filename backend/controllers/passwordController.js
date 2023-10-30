@@ -1,7 +1,7 @@
 import asyncHandler from "express-async-handler"
 import bcrypt from 'bcryptjs'
 import UserSchema, { validateEmail, validateNewPassword } from "../models/User.js"
-import VerificationTokenSchema from "../models/verificationToken.js"
+import VerificationTokenSchema from "../models/VerificationToken.js"
 import sendEmail from '../utils/sendEmail.js'
 import crypto from 'crypto'
 
