@@ -33,7 +33,7 @@ app.use(rateLimiting({
 }))
 
 app.use(cors({
-    origin: "http://localhost:3000"
+    origin: process.env.CLINT_DOMAIN
 }))
 
 app.use("/api/auth", authRoute)
