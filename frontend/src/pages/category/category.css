@@ -1,0 +1,25 @@
+.Category{
+    min-height: calc(100vh - 130px);
+    padding: 20px;
+}
+.CategoryTitle{
+    margin-bottom: 15px;
+    color: var(--gray-color);
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--gray-color);
+    font-size: 30px;
+    width: max-content;
+}
+.CategoryNotFound{
+    font-size: 30px;
+    margin: 20px 0;
+    color: var(--dark-color);
+}
+.CategoryNotFound span{
+    color: var(--red-color);
+}
+.CategoryNotFoundLink{
+    font-size: 21px;
+    text-decoration: underline;
+    font-weight: 500;
+}

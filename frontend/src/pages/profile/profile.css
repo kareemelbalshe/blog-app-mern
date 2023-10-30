@@ -1,0 +1,124 @@
+.Profile{
+    padding: 30px;
+}
+.ProfileHeader{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--primary-color);
+}
+.ProfileImageWrapper{
+    width: 120px;
+    height: 120px;
+    position: relative;
+    text-align: center;
+}
+.ProfileImage{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: var(--white-color);
+}
+.uploadProfilePhotoIcon,
+.uploadProfilePhotoBtn{
+    color: var(--primary-color);
+    background-color: #eee;
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 0 5px;
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    margin: auto;
+    width: max-content;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 25px;
+}
+.uploadProfilePhotoBtn{
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--dark-color);
+    right: -65px;
+}
+.ProfileUsername{
+    font-size: 30px;
+    color: var(--white-color);
+    margin: 10px 0;
+}
+.ProfileBio{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--main-color);
+    margin: 10px 0;
+}
+.userDateJoined strong{
+    color: var(--gray-color);
+    font-size: 17px;
+}
+.userDateJoined span{
+    color: var(--green-sea-color);
+    font-size: 15px;
+    font-weight: 500;
+}
+.ProfileUpdateBtn{
+    font-size: 21px;
+    font-weight: 500;
+    background-color: var(--green-color);
+    color: var(--white-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.ProfilePostsList{
+    width: 800px;
+    margin: 20px auto;
+}
+.ProfilePostsListTitle{
+    margin-bottom: 20px;
+    padding: 5px 0;
+    font-size: 40px;
+    color: var(--primary-color);
+    border-bottom: 2px solid;
+}
+.DeleteAccountBtn{
+    background-color: var(--white-color);
+    color: var(--red-color);
+    padding: 5px;
+    border: 1px solid;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+}
+.profileLoading{
+    min-height: calc(100vh - 130px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+@media (max-width:990px) {
+    .ProfilePostsList{
+        width: 100%;
+    }
+}
+@media (max-width:520px) {
+    .Profile{
+        padding: 15px;
+    }
+    .ProfileHeader{
+        padding: 10px;
+    }
+    .ProfileBio{
+        text-align: center;
+    }
+}

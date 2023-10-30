@@ -1,0 +1,29 @@
+.VerifyEmail{
+    height: calc(100vh - 130px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.VerifyEmailIcon{
+    font-size: 80px;
+    color: var(--green-color);
+}
+.VerifyEmailTitle{
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--green-color);
+}
+.VerifyEmailLink{
+    font-size: 24px;
+    font-weight: 600;
+    background-color: var(--primary-color);
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--white-color);
+}
+.VerifyEmailNotFound{
+    font-size: 40px;
+    color: var(--red-color);
+}

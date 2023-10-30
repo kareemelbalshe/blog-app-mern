@@ -1,0 +1,107 @@
+.postList{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 9;
+}
+.postItem{
+    width: 100%;
+    background-color: rgb(244, 244, 244);
+    margin-bottom: 40px;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 1px solid rgb(183, 179, 179);
+}
+.postItemImageWrapper{
+    width: 100%;
+    margin-bottom: 15px;
+}
+.postItemImage{
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+.postItemInfoWrapper{
+    width: 100%;
+}
+.postItemInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+    border-bottom: 1px solid var(--gray-color);
+    padding-bottom: 5px;
+}
+.postItemAuther strong{
+    color: var(--green-sea-color);
+    font-size: 18px;
+}
+.postItemAuther .postItemUsername{
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+.postItemDate{
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--green-sea-color);
+}
+.postItemDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+.postItemTitle{
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.postItemCategory{
+    background-color: var(--pumpkin-color);
+    color: var(--white-color);
+    padding: 2px 7px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.postItemDescription{
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--secandary-color);
+    font-weight: 500;
+    padding: 5px;
+    margin: 10px 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.postItemLink{
+    background-color: var(--green-color);
+    color: var(--white-color);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 21px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+@media (max-width:720px) {
+    .postItem{
+        padding: 10px;
+    }
+    .postItemImage{
+        object-fit: cover;
+    }
+}

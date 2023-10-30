@@ -1,0 +1,46 @@
+.CommentList{
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.CommentListCount{
+    font-size: 30px;
+    color: var(--dark-color);
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+.CommentItem{
+    padding: 7px;
+    border: 1px solid var(--gray-color);
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.CommentItemInfo{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.CommentItemUsername{
+    font-size: 21px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-transform: capitalize;
+}
+.CommentItemTime{
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--pumpkin-color);
+}
+.CommentItemText{
+    padding: 10px;
+    color: var(--dark-color);
+    font-size: 17px;
+}
+.CommentItemIconWrapper{
+    padding: 10px;
+    font-size: 18px;
+}
+.CommentItemIconWrapper i{
+    cursor: pointer;
+}
