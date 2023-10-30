@@ -33,7 +33,7 @@ app.use(rateLimiting({
 }))
 
 app.use(cors({
-    origin: process.env.CLINT_DOMAIN
+    origin: "https://blog-app-mern-taupe-seven.vercel.app"
 }))
 
 app.use("/api/auth", authRoute)
