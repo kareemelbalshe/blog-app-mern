@@ -46,17 +46,17 @@ export const getAllPostsCtrl = asyncHandler(async (req, res) => {
             .skip((pageNumber - 1) * POST_PER_PAGE)
             .limit(POST_PER_PAGE)
             .sort({ createdAt: -1 })
-            .populate("user", ["-password","-isAdmin"])
+            .populate("user", ["-password"])
     }
     else if (category) {
         posts = await PostSchema.find({ category: category })
             .sort({ createdAt: -1 })
-            .populate("user", ["-password","-isAdmin"])
+            .populate("user", ["-password"])
     }
     else {
         posts = await PostSchema.find()
             .sort({ createdAt: -1 })
-            .populate("user", ["-password","-isAdmin"])
+            .populate("user", ["-password"])
     }
     res.status(200).json(posts)
 })
@@ -118,7 +118,7 @@ export const updatePostCtrl = asyncHandler(async (req, res) => {
             description: req.body.description,
             category: req.body.category
         }
-    }, { new: true }).populate("user", ["-password","-isAdmin"])
+    }, { new: true }).populate("user", ["-password"])
 
     res.status(200).json(updatePost)
 })
