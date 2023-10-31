@@ -23,7 +23,7 @@ export const sendResetPasswordLinkCtrl = asyncHandler(async (req, res) => {
         await verificationToken.save()
     }
 
-    const link = `https://blog-app-mern-fprg.onrender.com/reset-password/${user._id}/${verificationToken.token}`
+    const link = `https://blog-app-mern-taupe-seven.vercel.app//reset-password/${user._id}/${verificationToken.token}`
     const htmlTemplate = `
     <a href="${link}">Click here to reset your password</a>
     `
