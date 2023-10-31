@@ -12,7 +12,7 @@ import PostSchema from "../models/Post.js";
 
 
 export const getAllUsersCtrl = asyncHandler(async (req, res) => {
-    const users = await UserSchema.find().select("-password","-isAdmin")
+    const users = await UserSchema.find().select("-password")
     res.status(200).json(users)
 })
 
@@ -39,7 +39,7 @@ export const updateUserProfileCtrl = asyncHandler(async (req, res) => {
             password: req.body.password,
             bio: req.body.bio
         }
-    }, { new: true }).select("-password","-isAdmin").populate("posts")
+    }, { new: true }).select("-password").populate("posts")
     res.status(200).json(updateUser)
 })
 
