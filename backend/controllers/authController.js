@@ -35,7 +35,7 @@ export const registerUserCtrl = asyncHandler(async (req, res) => {
         token: crypto.randomBytes(32).toString("hex")
     })
     await verificationToken.save()
-    const link = `https://blog-app-mern-taupe-seven.vercel.app//users/${user._id}/verify/${verificationToken.token}`
+    const link = `https://blog-app-mern-taupe-seven.vercel.app/users/${user._id}/verify/${verificationToken.token}`
     const htmlTemplate = `
     <div>
         <p>Click on the link below to verify your email</p>
@@ -75,7 +75,7 @@ export const loginUserCtrl = asyncHandler(async (req, res) => {
             })
             await verificationToken.save()
         }
-        const link = `https://blog-app-mern-taupe-seven.vercel.app//users/${user._id}/verify/${verificationToken.token}`
+        const link = `https://blog-app-mern-taupe-seven.vercel.app/users/${user._id}/verify/${verificationToken.token}`
         const htmlTemplate = `
     <div>
         <p>Click on the link below to verify your email</p>
