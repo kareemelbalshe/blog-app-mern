@@ -22,8 +22,9 @@ export const sendResetPasswordLinkCtrl = asyncHandler(async (req, res) => {
         })
         await verificationToken.save()
     }
+    
 
-    const link = `${process.env.CLINT_DOMAIN}/reset-password/${user._id}/${verificationToken.token}`
+    const link = `https://blog-app-mern-taupe-seven.vercel.app/reset-password/${user._id}/${verificationToken.token}`
     const htmlTemplate = `
     <a href="${link}">Click here to reset your password</a>
     `
@@ -47,13 +48,11 @@ export const getResetPasswordLinkCtrl = asyncHandler(async (req, res) => {
 })
 
 export const resetPasswordCtrl = asyncHandler(async (req, res) => {
-    // التحقق من صحة البيانات المدخلة
     const { error } = validateNewPassword(req.body);
     if (error) {
         return res.status(400).json({ message: error.details[0].message });
     }
 
-    // البحث عن المستخدم باستخدام معرف المستخدم
     const user = await UserSchema.findById(req.params.userId);
     if (!user) {
         return res.status(404).json({ message: "Invalid link" });
@@ -68,14 +67,10 @@ export const resetPasswordCtrl = asyncHandler(async (req, res) => {
     if (!user.isAccountVerified) {
         user.isAccountVerified = true;
     }
-
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(req.body.password, salt);
-    user.password = hashedPassword;
-
-    await user.save();
-
-    await VerificationTokenSchema.deleteOne({ _id: verificationToken._id });
-
-    res.status(200).json({ message: "Password reset successfully, please log in" });
-});
+    const salt = await bcrypt.genSalt(10)
+    const hashedPassword = await bcrypt.hash(req.body.password, salt)
+    user.password = hashedPassword
+    await user.save()
+    await verificationToken.remove()
+    res.status(200).json({ message: "Password reset successfully, please log in" })
+})

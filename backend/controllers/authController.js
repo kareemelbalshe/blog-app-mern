@@ -35,11 +35,15 @@ export const registerUserCtrl = asyncHandler(async (req, res) => {
         token: crypto.randomBytes(32).toString("hex")
     })
     await verificationToken.save()
+<<<<<<< HEAD
     //     let text = "https://blog-app-mern-taupe-seven.vercel.app/profile/653ff161463d9e06f4c2468a";
     // const myArray = text.split("/");
 
     // document.getElementById("demo").innerHTML = myArray[0]+'//'+myArray[2]; 
     const link = `${process.env.CLINT_DOMAIN}/users/${user._id}/verify/${verificationToken.token}`
+=======
+    const link = `https://blog-app-mern-taupe-seven.vercel.app/users/${user._id}/verify/${verificationToken.token}`
+>>>>>>> 52cd4f5c3ce84052f5ac095192fe77da02241934
     const htmlTemplate = `
     <div>
         <p>Click on the link below to verify your email</p>
@@ -79,7 +83,7 @@ export const loginUserCtrl = asyncHandler(async (req, res) => {
             })
             await verificationToken.save()
         }
-        const link = `${process.env.CLINT_DOMAIN}/users/${user._id}/verify/${verificationToken.token}`
+        const link = `https://blog-app-mern-taupe-seven.vercel.app/users/${user._id}/verify/${verificationToken.token}`
         const htmlTemplate = `
     <div>
         <p>Click on the link below to verify your email</p>
