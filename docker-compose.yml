@@ -1,0 +1,26 @@
+version: '3.8'
+name: blog-app
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    stdin_open: true
+    tty: true
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "5005:5005"
+    environment:
+      - NODE_ENV=production
+      - PORT=5005
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules

@@ -31,9 +31,9 @@ app.use(rateLimiting({
     windowMs: 10 * 60 * 1000,
     max: 200
 }))
-
+//https://blog-app-mern-taupe-seven.vercel.app
 app.use(cors({
-    origin: process.env.CLINT_DOMAIN
+    origin: "https://blog-app-mern-taupe-seven.vercel.app"
 }))
 
 app.use("/api/auth", authRoute)

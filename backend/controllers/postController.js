@@ -7,6 +7,8 @@ import fs from "fs"
 import PostSchema, { validateCreatePost, validateUpdatePost } from "../models/Post.js"
 import { cloudinaryRemoveImage, cloudinaryUplodeImage } from "../utils/cloudinary.js"
 import CommentSchema from "../models/Comment.js";
+import  url  from "url";
+import { globalAgent } from "http";
 
 
 export const createPostCtrl = asyncHandler(async (req, res) => {
@@ -83,7 +85,7 @@ export const deletePostCtrl = asyncHandler(async (req, res) => {
     if (!post) {
         return res.status(404).json({ message: 'post not found' })
     }
-
+    
     if (req.user.isAdmin || req.user.id === post.user.toString()) {
         await PostSchema.findByIdAndDelete(req.params.id)
         await cloudinaryRemoveImage(post.image.publicId)
@@ -158,6 +160,9 @@ export const updatePostPhoto = asyncHandler(async (req, res) => {
 export const toggleLikeCtrl = asyncHandler(async (req, res) => {
     const loggendUser = req.user.id
     const { id: postId } = req.params
+
+    console.log()
+
     let post = await PostSchema.findById(postId)
     if (!post) {
         return res.status(404).json({ message: "post not found" })

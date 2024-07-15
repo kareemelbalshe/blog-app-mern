@@ -35,6 +35,10 @@ export const registerUserCtrl = asyncHandler(async (req, res) => {
         token: crypto.randomBytes(32).toString("hex")
     })
     await verificationToken.save()
+    //     let text = "https://blog-app-mern-taupe-seven.vercel.app/profile/653ff161463d9e06f4c2468a";
+    // const myArray = text.split("/");
+
+    // document.getElementById("demo").innerHTML = myArray[0]+'//'+myArray[2]; 
     const link = `${process.env.CLINT_DOMAIN}/users/${user._id}/verify/${verificationToken.token}`
     const htmlTemplate = `
     <div>
@@ -67,7 +71,7 @@ export const loginUserCtrl = asyncHandler(async (req, res) => {
         return res.status(400).json({ message: "invalid email or password" })
     }
     if (!user.isAccountVerified) {
-        let verificationToken = await VerificationTokenSchema.findOne({userId: user._id})
+        let verificationToken = await VerificationTokenSchema.findOne({ userId: user._id })
         if (!verificationToken) {
             verificationToken = new VerificationTokenSchema({
                 userId: user._id,
